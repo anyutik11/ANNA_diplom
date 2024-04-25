@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{header}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{header}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <span *ngFor="let recom of recomendations">
+      <ion-list-header>
+        <ion-label>{{ recom.subTitle }}</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>{{ recom.name }}</ion-label>
+      </ion-item>
+    </span>
+  </ion-list>
+</ion-content>
+
+
+
+
+
+
+
+<!--
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      New recomendation
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">New recomendation</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-input label="Рекомендация" labelPlacement="stacked" placeholder="Enter text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Направление" labelPlacement="stacked" placeholder="Enter text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Описание" labelPlacement="stacked" placeholder="Enter text"></ion-input>
+    </ion-item>    
+  </ion-list>
+    
+  <ion-button expand="block" class="ion-activatable ripple-parent rectangle">
+    Add
+  </ion-button>
+  
+</ion-content>
+-->

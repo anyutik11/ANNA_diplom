@@ -1,0 +1,62 @@
+<!--
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+-->
+
+<ion-content color="primary">
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <h2>Login</h2>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="my@email.ru" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="pass" type="password" ngModel required></ion-input>
+            </ion-item>
+          </div>
+          <div>
+            <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>      
+      <ion-row>
+        <ion-col>          
+          <ion-item>
+            <div padding slot="end">
+              or <a routerLink='/register'> register</a>
+            </div>
+          </ion-item>              
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="errMsg">
+        <ion-col>          
+          <ion-text color="danger">
+            <h3 class="ion-text-center">
+              Login/Password missmatch error
+            </h3>
+          </ion-text>            
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

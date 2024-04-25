@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{header}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{header}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-radio-group (ionChange)="onRadioValueChanged($event)" value="ai">
+      <ion-item>
+        <ion-radio value="ai" labelPlacement="end" justify="start">Ai</ion-radio>
+        <ion-radio value="all" labelPlacement="end" justify="start">All</ion-radio>
+        <ion-radio value="my" labelPlacement="end" justify="start">My</ion-radio>        
+      </ion-item>
+    </ion-radio-group>  
+  </ion-list>
+
+  <ion-list>
+    <span *ngFor="let recom of recomendations">
+      <ion-list-header>
+        <ion-label>{{ recom.subTitle }}</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>{{ recom.name }}</ion-label>
+      </ion-item>
+    </span>
+  </ion-list>
+</ion-content>
